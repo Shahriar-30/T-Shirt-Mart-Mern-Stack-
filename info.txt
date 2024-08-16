@@ -1,0 +1,28 @@
+User Img
+First Name
+Last Name
+Phone Number
+password
+email
+User Type
+Front Voter ID
+Back Voter ID
+Number Verification
+Email Verification
+
+function 
+=> create account 
+=> login account
+=> send email
+=> verify email
+
+in LogIn 
+redux setUser
+local storage {
+    info,
+    {
+        if info.emailVerify
+            email: true,
+
+    }
+}
