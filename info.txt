@@ -26,3 +26,7 @@ local storage {
 
     }
 }
+Dashboard
+  catagory => create, delete
+  user => block, delete
+  item => preview, crud

@@ -64,31 +64,30 @@ const LogInPage = () => {
           "http://localhost:4040/api/v1/user/login",
           { email, password }
         );
-        if(data.errorStatus){
-          toast.error(`${data.msg}😑`, {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            transition: 'Bounce',
-            });
-        }else{
-          toast.success(`${data.msg}🤩`, {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            transition: 'Bounce',
-            });
-        }
+        console.log(data)
+        // if(data.errorStatus){
+        //   toast.error(`${data.msg}😑`, {
+        //     position: "top-center",
+        //     autoClose: 5000,
+        //     hideProgressBar: false,
+        //     closeOnClick: true,
+        //     pauseOnHover: true,
+        //     draggable: true,
+        //     progress: undefined,
+        //     theme: "colored",
+        //     });
+        //   }else{
+        //   toast.success(`${data.msg}🤩`, {
+        //     position: "top-center",
+        //     autoClose: 5000,
+        //     hideProgressBar: false,
+        //     closeOnClick: true,
+        //     pauseOnHover: true,
+        //     draggable: true,
+        //     progress: undefined,
+        //     theme: "colored",
+        //     });
+        // }
       } catch (err) {
         console.log("err", err);
         toast.error('Something Went Wrong💀', {
@@ -100,7 +99,6 @@ const LogInPage = () => {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          transition: 'Bounce',
           });
       } finally {
         setBtnLoad(false);
@@ -121,7 +119,6 @@ const LogInPage = () => {
         draggable
         pauseOnHover
         theme="light"
-        transition: Bounce
       />
       {/* Same as */}
       <ToastContainer />
