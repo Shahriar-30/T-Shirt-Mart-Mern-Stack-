@@ -42,7 +42,7 @@ function DashBordPage() {
             {demo && (
               <div className="w-[500px] bg-[#eee] rounded-md mt-1 p-3">
                 {demo.map((e) => (
-                  <div className="flex justify-between border-b-2">
+                  <div key={e.id} className="flex justify-between border-b-2">
                     <div className="text-[18px] text-semibold">
                       <p>{e.email}</p>
                       <p>{e.name}</p>
