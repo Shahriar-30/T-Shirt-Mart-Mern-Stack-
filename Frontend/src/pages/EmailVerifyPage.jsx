@@ -4,7 +4,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 import { Link, useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 import { RiTShirtLine } from "react-icons/ri";
 
 function EmailVerifyPage() {
@@ -31,27 +31,15 @@ function EmailVerifyPage() {
               }
             );
             toast.success("E-Mail Sended", {
+              duration: 4000,
               position: "top-center",
-              autoClose: 5000,
-              hideProgressBar: true,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
             });
             localStorage.setItem("email", "true");
           }
         } catch (err) {
           toast.error("can't send E-Mail", {
+            duration: 4000,
             position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
           });
           console.log(err)
         }finally{
@@ -66,18 +54,8 @@ function EmailVerifyPage() {
   if (admin.emailVerify) {
     return (
       <>
-       <ToastContainer
-          position="top-center"
-          autoClose={5000}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-        />
+            <Toaster />
+
       <div className="h-screen w-full grid place-items-center">
         <div className="w-[70%] h-[300px] shadow-2xl shadow-pink-500/20 rounded-lg bg-slate-200 flex gap-2 flex-col items-center justify-center">
       <RiTShirtLine className="text-pink-500 text-[50px] text-center" />
@@ -95,18 +73,8 @@ function EmailVerifyPage() {
   } else {
     return (
       <>
-       <ToastContainer
-          position="top-center"
-          autoClose={5000}
-          hideProgressBar
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-        />
+           <Toaster />
+
       <div className="h-screen w-full grid place-items-center">
        
         <div className="w-[70%] h-[300px] shadow-2xl shadow-pink-500/20 rounded-lg bg-slate-200 flex gap-2 flex-col items-center justify-center">
@@ -130,26 +98,14 @@ function EmailVerifyPage() {
                   }
                 );
                 toast.success("E-Mail Sended", {
+                  duration: 4000,
                   position: "top-center",
-                  autoClose: 5000,
-                  hideProgressBar: true,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  progress: undefined,
-                  theme: "colored",
                 });
                 localStorage.setItem("email", "true");
               } catch (err) {
                 toast.error("can't send E-Mail", {
+                  duration: 4000,
                   position: "top-center",
-                  autoClose: 5000,
-                  hideProgressBar: true,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  progress: undefined,
-                  theme: "colored",
                 });
                 console.log(err)
               }finally{

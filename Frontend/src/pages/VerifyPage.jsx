@@ -3,7 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { jwtDecode } from "jwt-decode";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 import { setUser } from "../tools/Slice/UserSlice/UserSlice";
 
 function VerifyPage() {

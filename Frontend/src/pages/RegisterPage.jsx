@@ -12,8 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../tools/Slice/UserSlice/UserSlice";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toast, { Toaster } from "react-hot-toast";
 import { jwtDecode } from "jwt-decode";
 
 const RegisterPage = () => {
@@ -83,32 +82,22 @@ const RegisterPage = () => {
             password,
           }
         );
-        toast.success(`😎 ${data.data.msg}`, {
+        // data.data.msg
+        toast.success(data.data.msg, {
+          duration: 4000,
           position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
         });
         dispatch(setUser(data.data.user));
         setTimeout(() => {
           navigate("/emailVerify");
-        }, 200);
+        }, 2000);
       } catch (err) {
-        toast.error(`🤐 ${err.response?.data?.msg}`, {
+        // err.response?.data?.msg
+        toast.error(err.response?.data?.msg, {
+          duration: 4000,
           position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
-        if (err.response.data.msg == "Email already exists.") {
+        })
+        if (err.response?.data?.msg == "Email already exists.") {
           setEmailErr("Email already exists.");
         }
         console.log(err);
@@ -120,18 +109,7 @@ const RegisterPage = () => {
 
   return (
     <>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
+      <Toaster />
       <div className="bg-[#eee] h-screen w-full flex items-center justify-center">
         <h1 className="absolute top-[1%]  text-[25px]">
           Create An Account!!😎
