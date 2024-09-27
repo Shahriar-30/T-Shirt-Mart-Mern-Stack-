@@ -39,7 +39,7 @@ export const CatagoryPage = () => {
               </div>
               <div>
                 <ButtonGroup gap="4">
-                  <Button colorScheme="red">Delete</Button>
+                  <Button colorScheme="red" >Delete</Button>
                 </ButtonGroup>
               </div>
             </div>
